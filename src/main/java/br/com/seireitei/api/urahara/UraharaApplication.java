@@ -1,4 +1,4 @@
-package br.com.seireitei.urahara.urahara;
+package br.com.seireitei.api.urahara;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

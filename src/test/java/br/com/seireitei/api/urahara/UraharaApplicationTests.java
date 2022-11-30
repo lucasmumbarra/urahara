@@ -1,4 +1,4 @@
-package br.com.seireitei.urahara.urahara;
+package br.com.seireitei.api.urahara;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
