@@ -8,6 +8,8 @@ import javax.persistence.*;
 import org.apache.logging.log4j.util.Strings;
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -31,6 +33,7 @@ public class Customer {
   private String document;
 
   @Column(name = "date_registered")
+  @JsonFormat(pattern = "dd/MM/yyyy")
   private LocalDate dateRegistered;
 
   @PrePersist
@@ -38,6 +41,7 @@ public class Customer {
     if (Strings.isBlank(uuid)) {
       setUuid("CT-" + UUID.randomUUID().toString());
     }
+    setDateRegistered(LocalDate.now());
   }
 
 }
