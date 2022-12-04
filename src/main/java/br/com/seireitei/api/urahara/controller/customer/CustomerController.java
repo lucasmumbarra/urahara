@@ -30,9 +30,19 @@ public class CustomerController {
   @DeleteMapping(path = "{id}")
   @ResponseStatus(NO_CONTENT)
   public void delete(@PathVariable Integer id) {
-    repository.findById(id).map(customer -> {
-      repository.delete(customer);
+    repository.findById(id).map(c -> {
+      repository.delete(c);
       return Void.TYPE;
+    }).orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
+  }
+
+  @PutMapping(path = "{id}")
+  @ResponseStatus(NO_CONTENT)
+  public void update(@PathVariable Integer id, @RequestBody Customer customer) {
+    repository.findById(id).map(c -> {
+      c.setName(customer.getName());
+      c.setDocument(customer.getDocument());
+      return repository.save(c);
     }).orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
   }
 
