@@ -26,4 +26,14 @@ public class CustomerController {
   public Customer findByCustomerId(@PathVariable Integer id) {
     return repository.findById(id).orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
   }
+
+  @DeleteMapping(path = "{id}")
+  @ResponseStatus(NO_CONTENT)
+  public void delete(@PathVariable Integer id) {
+    repository.findById(id).map(customer -> {
+      repository.delete(customer);
+      return Void.TYPE;
+    }).orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
+  }
+
 }
