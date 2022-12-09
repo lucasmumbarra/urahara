@@ -1,8 +1,9 @@
 package br.com.seireitei.api.urahara.model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,4 +18,26 @@ public class BaseModel<T extends BaseModel<T>> implements Serializable {
   public static final String ID = "id";
   public static final String DATE_MODEL = "dateModel";
   
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(nullable = false, name = "id")
+  private Long id;
+
+  @Embedded
+  private DateModel dateModel;
+
+  @Version
+  @Column(nullable = false, name = "version")
+  private Integer version;
+
+  @PrePersist
+  private void initializeDates() {
+    LocalDateTime now = LocalDateTime.now(TimeZones.getUtc());
+    dateModel = new DateModel(now, now, null);
+  }
+
+  @PreUpdate
+  private void updateUpdateAt() {
+    dateModel.setUpdatedAt(LocalDateTime.now(TimeZones.getUtc()));
+  }
 }
