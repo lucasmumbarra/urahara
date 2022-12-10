@@ -31,7 +31,7 @@ public class DateModel implements Serializable {
   @Column(nullable = false, name = "updated_at")
   private LocalDateTime updatedAt;
 
-  @Column(nullable = true, name = "created_at")
+  @Column(nullable = true, name = "deleted_at")
   private LocalDateTime deletedAt;
 
   public DateModel() {
@@ -52,6 +52,6 @@ public class DateModel implements Serializable {
   }
 
   public String formattedUpdatedAt() {
-    return getFormattedDate(updatedAt, YYY_MM_DD_T_HH_MM_SS);
+    return getFormattedDate(createdAt, YYY_MM_DD_T_HH_MM_SS);
   }
 }

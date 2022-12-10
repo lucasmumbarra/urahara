@@ -30,8 +30,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 
   private ApiInfo metaData() {
     return new ApiInfoBuilder()
-        .title("ServiÁo Urahara")
-        .description("Gerenciamento de usu·rios").version("1.0.0")
+        .title("Servi√ßo Urahara")
+        .description("Gerenciamento de usu√°rios").version("1.0.0")
         .license("Apache License, Version 2.0")
         .licenseUrl("https://www.apache.org/licenses/LICENSE-2")
         .build();
@@ -39,7 +39,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 
   @Override
   protected void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META_INF/resources/");
-    registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META_INF/resources/webjars");
+    registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+    registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
   }
 }
