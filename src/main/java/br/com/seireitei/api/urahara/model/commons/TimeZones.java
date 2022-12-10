@@ -1,4 +1,4 @@
-package br.com.seireitei.api.urahara.model;
+package br.com.seireitei.api.urahara.model.commons;
 
 import java.time.ZoneId;
 import java.util.TimeZone;

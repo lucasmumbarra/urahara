@@ -1,4 +1,4 @@
-package br.com.seireitei.api.urahara.validator;
+package br.com.seireitei.api.urahara.web.error.validator;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

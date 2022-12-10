@@ -1,4 +1,4 @@
-package br.com.seireitei.api.urahara.model;
+package br.com.seireitei.api.urahara.model.commons;
 
 import static br.com.seireitei.api.urahara.utils.DatePatterns.YYY_MM_DD_T_HH_MM_SS;
 import static br.com.seireitei.api.urahara.utils.Dates.getFormattedDate;

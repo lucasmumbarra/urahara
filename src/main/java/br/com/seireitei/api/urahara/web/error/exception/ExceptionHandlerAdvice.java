@@ -1,4 +1,4 @@
-package br.com.seireitei.api.urahara.exception;
+package br.com.seireitei.api.urahara.web.error.exception;
 
 import java.util.Locale;
 
