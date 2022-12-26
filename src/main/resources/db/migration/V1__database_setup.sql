@@ -1,3 +1,7 @@
+----------------------------------------------
+-- v1 (04/12/2022)
+----------------------------------------------
+
 create table customer (
   id bigint not null auto_increment,
   uuid varchar(100) not null,
