@@ -5,7 +5,6 @@ import java.util.function.Function;
 import org.springframework.stereotype.Component;
 
 import br.com.seireitei.api.urahara.model.customer.Customer;
-import br.com.seireitei.api.urahara.request.customer.CustomerRequest;
 import br.com.seireitei.api.urahara.response.customer.CustomerResponse;
 
 @Component
