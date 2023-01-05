@@ -32,8 +32,8 @@ public class Permission extends BaseModel<Permission> {
   private String access_level;
 
   @ManyToOne
-  @JoinColumn(table = "access_group", referencedColumnName = "id")
-  private AccessGroup access_group_id;
+  @JoinColumn(name = "access_group_id", referencedColumnName = "id")
+  private AccessGroup access_group;
 
   @PrePersist
   public void PrePersist() {

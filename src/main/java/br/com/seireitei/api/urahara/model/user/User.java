@@ -42,12 +42,12 @@ public class User extends BaseModel<User> {
   private String status;
 
   @ManyToOne
-  @JoinColumn(table = "customer", referencedColumnName = "id")
-  private Customer customer_id;
+  @JoinColumn(name = "customer_id", referencedColumnName = "id")
+  private Customer customer;
 
   @ManyToOne
-  @JoinColumn(table = "access_group", referencedColumnName = "id")
-  private AccessGroup access_group_id;
+  @JoinColumn(name = "access_group_id", referencedColumnName = "id")
+  private AccessGroup access_group;
 
   @PrePersist
   public void PrePersist() {
