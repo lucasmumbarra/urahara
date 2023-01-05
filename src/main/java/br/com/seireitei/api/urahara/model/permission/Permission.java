@@ -11,6 +11,7 @@ import javax.persistence.Table;
 
 import org.apache.logging.log4j.util.Strings;
 
+import br.com.seireitei.api.urahara.model.accessgroup.AccessGroup;
 import br.com.seireitei.api.urahara.model.commons.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,7 +33,7 @@ public class Permission extends BaseModel<Permission> {
 
   @ManyToOne
   @JoinColumn(table = "access_group", referencedColumnName = "id")
-  private String access_group_id;
+  private AccessGroup access_group_id;
 
   @PrePersist
   public void PrePersist() {

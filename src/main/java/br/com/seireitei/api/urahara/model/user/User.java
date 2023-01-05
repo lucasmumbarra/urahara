@@ -11,7 +11,9 @@ import javax.persistence.Table;
 
 import org.apache.logging.log4j.util.Strings;
 
+import br.com.seireitei.api.urahara.model.accessgroup.AccessGroup;
 import br.com.seireitei.api.urahara.model.commons.BaseModel;
+import br.com.seireitei.api.urahara.model.customer.Customer;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -41,11 +43,11 @@ public class User extends BaseModel<User> {
 
   @ManyToOne
   @JoinColumn(table = "customer", referencedColumnName = "id")
-  private String customer_id;
+  private Customer customer_id;
 
   @ManyToOne
   @JoinColumn(table = "access_group", referencedColumnName = "id")
-  private String access_group_id;
+  private AccessGroup access_group_id;
 
   @PrePersist
   public void PrePersist() {
